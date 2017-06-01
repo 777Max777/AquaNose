@@ -45,18 +45,18 @@
             this.экспортВCSVutf8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.экспортВCSVcp1251ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.measureTree = new QuadroSoft.Enose.Graph.MeasureTree();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.multiGraph = new QuadroSoft.Enose.Graph.MultiGraph();
             this.label1 = new System.Windows.Forms.Label();
             this.labelProfile = new System.Windows.Forms.Label();
             this.comboBoxProfiles = new System.Windows.Forms.ComboBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.measureTree = new QuadroSoft.Enose.Graph.MeasureTree();
+            this.multiGraph = new QuadroSoft.Enose.Graph.MultiGraph();
             this.menuStrip.SuspendLayout();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -203,20 +203,11 @@
             this.splitContainer.SplitterDistance = 312;
             this.splitContainer.TabIndex = 4;
             // 
-            // measureTree
-            // 
-            this.measureTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.measureTree.Location = new System.Drawing.Point(0, 0);
-            this.measureTree.MinimumSize = new System.Drawing.Size(310, 300);
-            this.measureTree.Name = "measureTree";
-            this.measureTree.ShowMeasures = true;
-            this.measureTree.Size = new System.Drawing.Size(312, 673);
-            this.measureTree.TabIndex = 0;
-            // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(3, 45);
@@ -257,17 +248,6 @@
             this.panel1.Size = new System.Drawing.Size(893, 596);
             this.panel1.TabIndex = 5;
             // 
-            // multiGraph
-            // 
-            this.multiGraph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.multiGraph.BackColor = System.Drawing.SystemColors.Control;
-            this.multiGraph.Location = new System.Drawing.Point(0, 50);
-            this.multiGraph.Name = "multiGraph";
-            this.multiGraph.Plotters = ((System.Collections.Generic.Dictionary<object, System.Windows.Forms.UserControl>)(resources.GetObject("multiGraph.Plotters")));
-            this.multiGraph.Size = new System.Drawing.Size(890, 69);
-            this.multiGraph.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -304,6 +284,29 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // measureTree
+            // 
+            this.measureTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.measureTree.Location = new System.Drawing.Point(0, 0);
+            this.measureTree.MinimumSize = new System.Drawing.Size(310, 300);
+            this.measureTree.Name = "measureTree";
+            this.measureTree.ShowMeasures = true;
+            this.measureTree.Size = new System.Drawing.Size(312, 673);
+            this.measureTree.TabIndex = 0;
+            // 
+            // multiGraph
+            // 
+            this.multiGraph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.multiGraph.BackColor = System.Drawing.SystemColors.Control;
+            this.multiGraph.Location = new System.Drawing.Point(0, 50);
+            this.multiGraph.Name = "multiGraph";
+            this.multiGraph.Plotters = ((System.Collections.Generic.Dictionary<object, System.Windows.Forms.UserControl>)(resources.GetObject("multiGraph.Plotters")));
+            this.multiGraph.Size = new System.Drawing.Size(890, 69);
+            this.multiGraph.TabIndex = 1;
             // 
             // MainWindow
             // 
