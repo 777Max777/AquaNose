@@ -17,6 +17,7 @@ namespace QuadroSoft.Enose.DataModel
         double fullLength, Interval;
         bool isMeasured;
         Mask mask;
+        int longitude, latitude;
 
         public MeasureData(
             Dictionary< Sensor, List<PointD>> data, 
@@ -28,7 +29,9 @@ namespace QuadroSoft.Enose.DataModel
             double fullLength, 
             double Interval,
             bool isMeasured,
-            Mask mask
+            Mask mask,
+            int lng,
+            int ltt
             )
 
         {
@@ -45,6 +48,8 @@ namespace QuadroSoft.Enose.DataModel
             this.Interval = Interval;
             this.isMeasured = isMeasured;
             this.mask = mask;
+            this.longitude = lng;
+            this.latitude = ltt;
         }
 
 
@@ -61,7 +66,9 @@ namespace QuadroSoft.Enose.DataModel
             double fullLength,
             double Interval,
             bool isMeasured,
-            Mask mask
+            Mask mask,
+            int lng,
+            int ltt
             )
         {
             Dictionary<Sensor, List<PointD>> measdata = new Dictionary<Sensor, List<PointD>>();
@@ -93,6 +100,8 @@ namespace QuadroSoft.Enose.DataModel
             this.Interval = Interval;
             this.isMeasured = isMeasured;
             this.mask = mask;
+            this.longitude = lng;
+            this.latitude = ltt;
         }
 
 
@@ -115,6 +124,18 @@ namespace QuadroSoft.Enose.DataModel
         {
             get { return name; }
             set { name = value; }
+        }
+
+        public int lng
+        {
+            get { return longitude; }
+            set { longitude = value; }
+        }
+
+        public int ltt
+        {
+            get { return latitude; }
+            set { latitude = value; }
         }
 
         /// <summary>
@@ -440,7 +461,7 @@ namespace QuadroSoft.Enose.DataModel
                     }
                 }
 
-                MeasureData dat = new MeasureData(data, -1, name, start, desc, gid, length, 1, isMeasured, m);
+                MeasureData dat = new MeasureData(data, -1, name, start, desc, gid, length, 1, isMeasured, m,0,0);
                 dat.DispData = dispdata;
                 return dat;
             }

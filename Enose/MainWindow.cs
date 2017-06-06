@@ -98,7 +98,7 @@ namespace QuadroSoft.Enose
         {
             comboBoxProfiles.Enabled = false;
             FormMeasureProfileSelect form = FormMeasureProfileSelect.getInstance(Program.Presets.CurrentProfile == null ? -1 : Program.Presets.CurrentProfile.ID);
-
+            MessageBox.Show(Convert.ToString(form.lng) + " " + Convert.ToString(form.ltt));
             form.AdjustForTask(true);
             MeasureProfile applied;
 
@@ -177,7 +177,7 @@ namespace QuadroSoft.Enose
                     double len = (int)form.numericUpDownTime.Value;
                     string txt = form.textBoxName.Text;
 
-                    FormMeasure meas = new FormMeasure(len, txt, applied, theinit, form.comboBoxMasks.SelectedItem as Mask);
+                    FormMeasure meas = new FormMeasure(len, txt, applied, theinit, form.comboBoxMasks.SelectedItem as Mask, form.lng, form.ltt);
                     meas.ShowDialog();
                     measureTree.ShowMeasures = measureTree.ShowMeasures;
                 }

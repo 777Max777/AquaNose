@@ -45,11 +45,34 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAddRow = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxProfiles
@@ -77,7 +100,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.Location = new System.Drawing.Point(665, 523);
+            this.buttonCancel.Location = new System.Drawing.Point(657, 505);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(94, 29);
             this.buttonCancel.TabIndex = 18;
@@ -89,7 +112,7 @@
             this.buttonSaveThis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveThis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveThis.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveThis.Location = new System.Drawing.Point(470, 523);
+            this.buttonSaveThis.Location = new System.Drawing.Point(462, 505);
             this.buttonSaveThis.Name = "buttonSaveThis";
             this.buttonSaveThis.Size = new System.Drawing.Size(189, 29);
             this.buttonSaveThis.TabIndex = 20;
@@ -102,7 +125,7 @@
             this.buttonMeas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonMeas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMeas.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonMeas.Location = new System.Drawing.Point(13, 523);
+            this.buttonMeas.Location = new System.Drawing.Point(13, 505);
             this.buttonMeas.Name = "buttonMeas";
             this.buttonMeas.Size = new System.Drawing.Size(162, 29);
             this.buttonMeas.TabIndex = 21;
@@ -128,7 +151,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxName.Location = new System.Drawing.Point(21, 28);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(692, 22);
+            this.textBoxName.Size = new System.Drawing.Size(684, 22);
             this.textBoxName.TabIndex = 23;
             // 
             // label2
@@ -192,8 +215,9 @@
             // 
             // splitContainer
             // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.IsSplitterFixed = true;
-            this.splitContainer.Location = new System.Drawing.Point(1, 2);
+            this.splitContainer.Location = new System.Drawing.Point(3, 3);
             this.splitContainer.Name = "splitContainer";
             this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -221,8 +245,8 @@
             this.splitContainer.Panel2.Controls.Add(this.label3);
             this.splitContainer.Panel2.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.splitContainer.Panel2MinSize = 0;
-            this.splitContainer.Size = new System.Drawing.Size(778, 647);
-            this.splitContainer.SplitterDistance = 81;
+            this.splitContainer.Size = new System.Drawing.Size(770, 626);
+            this.splitContainer.SplitterDistance = 78;
             this.splitContainer.SplitterWidth = 1;
             this.splitContainer.TabIndex = 29;
             // 
@@ -267,12 +291,201 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(784, 661);
+            this.tabControl1.TabIndex = 30;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.splitContainer);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(776, 632);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Настройки измерения";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(776, 632);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Адресс";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(8, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(405, 22);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Россия";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Страна";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Регион";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(8, 79);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(405, 22);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(184, 16);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Город/населённый пункт";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(8, 130);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(405, 22);
+            this.textBox3.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 158);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 16);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Улица";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(8, 177);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(405, 22);
+            this.textBox4.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 204);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 16);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Дом";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(8, 223);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(405, 22);
+            this.textBox5.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(512, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 72);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Выбрать на карте";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(468, 130);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(291, 22);
+            this.textBox6.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(465, 111);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 16);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Долгота";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(465, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 16);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Широта";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(468, 177);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(291, 22);
+            this.textBox7.TabIndex = 13;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(325, 251);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 28);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Ок";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(559, 205);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Проверить на карте";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // FormMeasureProfileSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
-            this.Controls.Add(this.splitContainer);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MaximumSize = new System.Drawing.Size(800, 700);
             this.MinimumSize = new System.Drawing.Size(800, 700);
@@ -289,6 +502,10 @@
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +528,25 @@
         private System.Windows.Forms.Button buttonDelRow;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonAddRow;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

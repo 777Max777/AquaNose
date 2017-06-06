@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using QuadroSoft.Enose.DataModel;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QuadroSoft.Enose.DataAccess
 {
@@ -16,13 +17,14 @@ namespace QuadroSoft.Enose.DataAccess
             string name, description;
             List<GroupTreeNode> subNodes;
             Dictionary<int, string> measures;
-            int id;
+            int id;            
 
             public int ID
             {
                 get { return id; }
                 set { id = value; }
             }
+
 
             public string Name
             {
@@ -270,9 +272,14 @@ namespace QuadroSoft.Enose.DataAccess
 
                 int MaskId = (reader["DefaultMask"] != DBNull.Value) ? (int)reader["DefaultMask"] : -1;
 
+                int Coordinate = (reader["Coordinate"] != DBNull.Value) ? (int)reader["DefaultMask"] : -1;
+
                 reader.Close();
 
-                measureData = new MeasureData(data, id, Name, time, Description, GroupId, fullLength, Interval, isMeasured, MaskId >=0 ? getMaskByID(MaskId) : null );
+                int lng = getLongitudeByID(Coordinate);
+                int ltt = getLatitudeByID(Coordinate);
+
+                measureData = new MeasureData(data, id, Name, time, Description, GroupId, fullLength, Interval, isMeasured, MaskId >=0 ? getMaskByID(MaskId) : null , lng, ltt);
                 if (!isMeasured) 
                     measureData.DispData = dispdata;
             }
@@ -296,10 +303,30 @@ namespace QuadroSoft.Enose.DataAccess
             return res == 1;
         }
 
+        public int getLongitudeByID(int id)
+        {
+            return Convert.ToInt32((string)executeScalar("SELECT Longitude FROM Address WHERE ID = " + id));
+        }
+
+        public int getLatitudeByID(int id)
+        {
+            return Convert.ToInt32((string)executeScalar("SELECT Latitude FROM Address WHERE ID = " + id));
+        }
+
+        public int insertAddress(int lng, int ltt)
+        {
+            string query = "INSERT INTO Address(Longitude, Latitude) VALUES('" + Convert.ToString(lng) + "','" + Convert.ToString(ltt) + "')";
+            if (!(executeNonQuery(query) > 0)) return -1;
+            return (int)executeScalar("SELECT MAX(ID) FROM Measures");
+        }
+
         public int insertMeasureData(MeasureData mdata)
         {
             string query;
-
+            if(mdata.lng != -1 && mdata.ltt != -1)
+            {
+                MessageBox.Show(Convert.ToString(insertAddress(mdata.lng, mdata.ltt)));
+            }
             IDbTransaction tran = connection.BeginTransaction();
             int mid = -1;
             try
@@ -578,7 +605,7 @@ namespace QuadroSoft.Enose.DataAccess
 
             reader.Close();
 
-             query = "SELECT ID, [Name], StartTime, IsMeasured, FullLength FROM Measures WHERE GroupID" + ((node.ID == -1) ? (" IS NULL") : ("=" + node.ID));
+             query = "SELECT ID, [Name], StartTime, IsMeasured, FullLength, Coordinate FROM Measures WHERE GroupID" + ((node.ID == -1) ? (" IS NULL") : ("=" + node.ID));
 
             reader = executeSelect(query);
             while (reader.Read())
@@ -588,7 +615,10 @@ namespace QuadroSoft.Enose.DataAccess
                 DateTime dt = (DateTime)reader["StartTime"];
                 bool IsMeasured = Convert.ToBoolean(reader["IsMeasured"]);
                 int flen = (int)((double)reader["FullLength"]);
-                MeasureData md = new MeasureData(new Dictionary<Sensor, List<PointD>>(), id, name, dt, "", -1, flen, 1, IsMeasured, null);
+                int Coordinate = (reader["Coordinate"] != DBNull.Value) ? (int)reader["DefaultMask"] : -1;
+                int lng = getLongitudeByID(Coordinate);
+                int ltt = getLatitudeByID(Coordinate);
+                MeasureData md = new MeasureData(new Dictionary<Sensor, List<PointD>>(), id, name, dt, "", -1, flen, 1, IsMeasured, null, lng, ltt);
                 if (statMeasures.Contains(id))
                 {
                     md.DispData = new Dictionary<Sensor, Dictionary<double, double>>();

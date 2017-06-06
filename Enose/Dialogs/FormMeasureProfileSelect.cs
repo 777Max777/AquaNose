@@ -15,6 +15,19 @@ namespace QuadroSoft.Enose.Dialogs
         List<DataGridViewComboBoxCell> combos;
         CheckBox[] checks;
 
+        int longitude, latitude;
+
+        public int lng
+        {
+            get { return longitude; }
+            set { longitude = value; }
+        }
+
+        public int ltt
+        {
+            get { return latitude; }
+            set { latitude = value; }
+        }
         ComboBox cbm;
         DataGridViewCell currentCell;
 
@@ -388,7 +401,8 @@ namespace QuadroSoft.Enose.Dialogs
                 }
                 else
                     usedProfile = curr;
-
+                longitude = Convert.ToInt32(textBox6.Text);
+                latitude = Convert.ToInt32(textBox7.Text);
                 Program.Presets.CurrentProfile = curr;
                 DialogResult = DialogResult.OK;
                 Close();
